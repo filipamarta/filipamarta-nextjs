@@ -34,28 +34,6 @@
   grid-row-start: 2;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
 .ctas {
   display: flex;
   gap: 16px;
@@ -68,10 +46,7 @@
   padding: 0 20px;
   border: none;
   border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -165,4 +140,27 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+
+.writeAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 200vw;
+  z-index: -1;
+}
+
+.writeAnimation path {
+  stroke: #e92a2a;
+  stroke-width: 1rem;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
 }
