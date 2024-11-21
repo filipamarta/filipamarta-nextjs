@@ -1,0 +1,20 @@
+.paintAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  /* height: 210vw; */
+  z-index: var(--z-index-base);
+}
+.paintAnimation path {
+  stroke: var(--color-green-500);
+  stroke-width: 1rem;
+  transition: stroke 0.8s ease-in-out;
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.visible {
+  opacity: 1;
+}
