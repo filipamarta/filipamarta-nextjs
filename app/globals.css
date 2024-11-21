@@ -1,10 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --font-family-headings: "Roboto Mono", Arial, Helvetica, serif;
-  --font-family-body: "Oswald", Arial, Helvetica, sans-serif;
+  --foreground: #695a81;
+
+  --font-family-headings: "Roboto Condensed", serif;
+  --font-family-body: "Montserrat", sans-serif;
+  --font-family-secondary: "Roboto Mono", Arial, Helvetica, serif;
+
+  --color-neutral-300: #979797;
+  --color-purple-100: #ebe3f7;
+  --color-purple-500: #7631e0;
+  --color-purple-800: #695a81;
+  --color-green-100: #c7e9d8;
+  --color-green-500: #31e081;
+
+  --z-index-minus1: -1;
+  --z-index-base: 0;
+  --z-index-1: 1;
+  --z-index-2: 2;
+  --z-index-3: 3;
+  --z-index-max: 10;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,22 +32,31 @@
 
 html,
 body {
+  /*  height: 100%; */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 body {
+  /*   min-height: 100vh; */
+
   color: var(--foreground);
   background: var(--background);
 
   font-family: var(--font-family-body);
   font-optical-sizing: auto;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
+  line-height: 1.5;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   position: relative;
   top: 0;
   left: 0;
+
+  cursor: none;
 }
 
 * {
@@ -52,9 +77,14 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-headings);
+  font-weight: 700;
   font-optical-sizing: auto;
-  font-style: normal;
+  font-style: italic;
 }
+/* 
+h1 {
+  font-size: 5rem;
+} */
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -66,4 +96,10 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
