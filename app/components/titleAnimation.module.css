@@ -1,0 +1,33 @@
+.topMessage {
+  color: var(--color-green-500);
+  font-family: var(--font-family-headings);
+  font-size: 14vw; /* resize with the width */
+  line-height: 1;
+  font-variation-settings: "wght" 100, "wdth" 85;
+  animation: topMessageAnimation 10s infinite forwards;
+  animation-delay: 0s;
+  animation-play-state: running;
+  transition: font-variation-settings 2s ease-in-out;
+}
+
+@keyframes topMessageAnimation {
+  60% {
+    font-variation-settings: "wght" 700, "wdth" 100;
+  }
+
+  100% {
+    font-variation-settings: "wght" 100, "wdth" 85;
+  }
+}
+
+.topMessage span a {
+  z-index: 10;
+  position: relative;
+  mix-blend-mode: color-dodge;
+  isolation: isolate;
+}
+
+.topMessage span:hover {
+  color: rgb(0, 255, 255);
+  transition: color 0.3s ease-in-out;
+}
