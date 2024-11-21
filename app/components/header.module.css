@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-max);
+  mix-blend-mode: difference;
+  isolation: isolate;
+}
+
+.header ul {
+  width: 90%;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  list-style: none;
+}
+
+.link {
+  font-size: 0.9rem;
+  font-style: normal;
+  text-transform: uppercase;
+  padding: 0.8rem;
+}
