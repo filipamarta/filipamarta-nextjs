@@ -12,8 +12,8 @@ export default function About() {
           journey, originally a microbiologist, to DJing, creating a music film
           festival, establishing a music agency, and founding a cultural
           cooperative. Eventually, I discovered my passion for web design and
-          then frontend development, where I've been thriving for the past seven
-          years.
+          then frontend development, where I&apos;ve been thriving for the past
+          seven years.
         </p>
         <p>
           I’m also dedicated to accessibility, design systems, and cool

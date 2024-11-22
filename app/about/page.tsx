@@ -63,7 +63,7 @@ export default function Page() {
             <p>
               Well, that happened with Muvi Lisboa in September 2014. The
               festival was sponsored by me and other friend, and to be able to
-              do it, we invited our friends and family to help. We couldn't
+              do it, we invited our friends and family to help. We couldn&apos;t
               afford to pay for a website so I spent a hole month working on it,
               in wordpress, learning and creating. The end result was not bad,
               but also not good. This triggered everything else that happened
@@ -77,14 +77,14 @@ export default function Page() {
             </p>
             so one day I I learned HTML, CSS, JavaScript and PHP, and I’ve done
             three websites that you can check at “My Work” section. As a graphic
-            designer, I've done print and digital posters for events, concerts
-            and dj gigs, logos for different companies, press releases. You can
-            check part of them at “My Work” section or go to my Behance
+            designer, I&apos;ve done print and digital posters for events,
+            concerts and dj gigs, logos for different companies, press releases.
+            You can check part of them at “My Work” section or go to my Behance
             portfolio to see all those works. I am intrigued with colours,
             shapes and I want to understand why and how people are moved by
             experience digital platforms. Nowadays I continue with DJ gigs, I
-            have a music agency called Pinuts and I'm a freelance looking for
-            better ways to growing in the design and front-end development.
+            have a music agency called Pinuts and I&apos;m a freelance looking
+            for better ways to growing in the design and front-end development.
             <p>
               With so many challenges it is impossible not to say that I’ve
               developed my professional skills.
