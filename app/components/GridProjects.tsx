@@ -68,85 +68,88 @@ export default function GridProjects() {
         Selected Projects
       </motion.h2>
 
-      <motion.ul
-        className={styles.projectsList}
-        transition={{
-          staggerChildren: 0.1,
-        }}
-      >
-        {projects.map((project, index) => {
-          const { name, href, imgHeight, imgSrc, imgWidth, videoSrc } = project;
+      <div>
+        <motion.ul
+          className={styles.projectsList}
+          transition={{
+            staggerChildren: 0.1,
+          }}
+        >
+          {projects.map((project, index) => {
+            const { name, href, imgHeight, imgSrc, imgWidth, videoSrc } =
+              project;
 
-          if (imgSrc) {
-            return (
-              <motion.li
-                key={index}
-                className={styles.project}
-                initial={{ scale: 0.5, y: 50, opacity: 0 }}
-                whileInView={{ scale: 1, y: 0, opacity: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  type: "spring",
-                  mass: 3,
-                  stiffness: 400,
-                  damping: 50,
-                }}
-                whileHover={{
-                  scale: 1.01,
-                  transition: { duration: 0.2 },
-                }}
-              >
-                <Link href={href} target="_blank">
-                  <figure>
-                    <Image
-                      src={imgSrc}
-                      alt={name}
-                      width={imgWidth}
-                      height={imgHeight}
-                      quality="100"
-                    />
-                    <figcaption>
-                      <h3>{name}</h3>
-                    </figcaption>
-                  </figure>
-                </Link>
-              </motion.li>
-            );
-          } else {
-            return (
-              <motion.li
-                key={index}
-                className={`${styles.project} ${styles.video}`}
-                initial={{ scale: 0.5, y: 50, opacity: 0 }}
-                whileInView={{ scale: 1, y: 0, opacity: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  type: "spring",
-                  mass: 3,
-                  stiffness: 400,
-                  damping: 50,
-                }}
-                whileHover={{
-                  scale: 1.01,
-                  transition: { duration: 0.2 },
-                }}
-              >
-                <Link href={href} target="_blank">
-                  <figure>
-                    <video width="100%" autoPlay loop muted>
-                      <source src={videoSrc} type="video/mp4" />
-                      Your browser does not support the video tag
-                    </video>
-                    <figcaption>
-                      <h3>{name}</h3>
-                    </figcaption>
-                  </figure>
-                </Link>
-              </motion.li>
-            );
-          }
-        })}
-      </motion.ul>
+            if (imgSrc) {
+              return (
+                <motion.li
+                  key={index}
+                  className={styles.project}
+                  initial={{ scale: 0.5, y: 50, opacity: 0 }}
+                  whileInView={{ scale: 1, y: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    type: "spring",
+                    mass: 3,
+                    stiffness: 400,
+                    damping: 50,
+                  }}
+                  whileHover={{
+                    scale: 1.01,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <Link href={href} target="_blank">
+                    <figure>
+                      <Image
+                        src={imgSrc}
+                        alt={name}
+                        width={imgWidth}
+                        height={imgHeight}
+                        quality="100"
+                      />
+                      <figcaption>
+                        <h3>{name}</h3>
+                      </figcaption>
+                    </figure>
+                  </Link>
+                </motion.li>
+              );
+            } else {
+              return (
+                <motion.li
+                  key={index}
+                  className={`${styles.project} ${styles.video}`}
+                  initial={{ scale: 0.5, y: 50, opacity: 0 }}
+                  whileInView={{ scale: 1, y: 0, opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    type: "spring",
+                    mass: 3,
+                    stiffness: 400,
+                    damping: 50,
+                  }}
+                  whileHover={{
+                    scale: 1.01,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <Link href={href} target="_blank">
+                    <figure>
+                      <video width="100%" autoPlay loop muted>
+                        <source src={videoSrc} type="video/mp4" />
+                        Your browser does not support the video tag
+                      </video>
+                      <figcaption>
+                        <h3>{name}</h3>
+                      </figcaption>
+                    </figure>
+                  </Link>
+                </motion.li>
+              );
+            }
+          })}
+        </motion.ul>
+      </div>
     </section>
   );
 }

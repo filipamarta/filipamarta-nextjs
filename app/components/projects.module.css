@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  z-index: var(--z-index-3);
+}
+
+.container h2 {
+  font-size: 6rem;
+  text-align: right;
+  padding-right: 80px;
+  margin-bottom: 300px;
+}
+
+.projectsList {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "element0 . element1"
+    ". element2 ."
+    "element3 . element4"
+    ". element5 .";
+  margin: 0 auto;
+  column-gap: 3rem;
+  row-gap: 6rem;
+  justify-items: start;
+  align-items: center;
+}
+
+.projectsList .project:not(.video) {
+  width: 100%;
+  transform-origin: 0%;
+  will-change: contents;
+}
+.projectsList .project.video {
+  width: 100%;
+  transform-origin: 0%;
+  will-change: contents;
+  grid-column-start: 1 !important;
+  grid-column-end: 3 !important;
+}
+
+.projectsList .project figcaption {
+  width: 100%;
+  color: white;
+  padding: 3px 10px;
+  font-size: 2rem;
+  overflow-x: hidden;
+}
+
+/* .projectsList .project figcaption span {
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+  transform: translate3d(0, 100%, 0);
+  animation-name: slideText;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  will-change: transform;
+} */
+/* 
+@keyframes slideText {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.projectElm:hover h5 span {
+  animation-play-state: paused;
+} */

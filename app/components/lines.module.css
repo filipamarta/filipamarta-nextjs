@@ -1,0 +1,16 @@
+.lines {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-minus1);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.lines div {
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-purple-100);
+}
