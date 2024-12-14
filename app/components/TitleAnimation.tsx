@@ -21,9 +21,9 @@ export default function TitleAnimation() {
           <Link href="/frontend">Frontend Developer</Link>
         </span>
         <br />
-        based in{" "}
+        and
         <span>
-          <Link href="/lisbon">Lisbon</Link>
+          <Link href="/lisbon">UX/UI Designer</Link>
         </span>
       </h1>
     </>
