@@ -14,12 +14,6 @@ const Cursor = () => {
     }
   };
 
-  const handleMouseMove = (event: MouseEvent) => {
-    requestAnimationFrame(() =>
-      animateCursor({ x: event.clientX, y: event.clientY })
-    );
-  };
-
   /* to handle mouseover and mouseleave styles during links hover */
   const handleMouseHover = (event: MouseEvent) => {
     const target = event.target as HTMLElement;
@@ -34,6 +28,12 @@ const Cursor = () => {
   };
 
   useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      requestAnimationFrame(() =>
+        animateCursor({ x: event.clientX, y: event.clientY })
+      );
+    };
+
     // Attach event listeners for mouse movement and hover
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseover", handleMouseHover, true);
