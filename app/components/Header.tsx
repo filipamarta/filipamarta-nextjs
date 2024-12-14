@@ -15,12 +15,6 @@ export default function Header() {
             <Link href="/projects">Projects</Link>
           </AnimatedFont>
           <AnimatedFont htmlAttribute="li" customStyles={styles.link}>
-            <Link href="/webdesign">Web Design</Link>
-          </AnimatedFont>
-          <AnimatedFont htmlAttribute="li" customStyles={styles.link}>
-            <Link href="/frontend">Frontend</Link>
-          </AnimatedFont>
-          <AnimatedFont htmlAttribute="li" customStyles={styles.link}>
             <Link href="/about">About</Link>
           </AnimatedFont>
           <AnimatedFont htmlAttribute="li" customStyles={styles.link}>
