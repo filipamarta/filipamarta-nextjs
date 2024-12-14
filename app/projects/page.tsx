@@ -8,7 +8,8 @@ export default function Page() {
       <Header />
       <div className={styles.page}>
         <main className={styles.main}>
-          <h1>Selected Projects</h1>
+          <h1>Selected Projects WIP</h1>
+
           <section>
             <div></div>
             <div></div>

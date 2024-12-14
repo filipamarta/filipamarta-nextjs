@@ -12,7 +12,7 @@ export default function TitleAnimation() {
         <br />
         of the internet
         <br />
-        as a{" "}
+        as a <br />
         <span>
           <Link href="/webdesign">Creative</Link>
         </span>

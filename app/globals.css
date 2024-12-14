@@ -84,7 +84,7 @@ h6 {
 h1 {
   font-size: 50px;
   font-size: clamp(2rem, 10vw, 5rem);
-  line-height: 1.5;
+  line-height: 1.1;
   font-style: italic;
 }
 h2 {
@@ -137,4 +137,24 @@ ul {
 
 p {
   font-size: clamp(1rem, 8vw, 1.2rem);
+}
+
+a.button-type {
+  display: block;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 1.4rem;
+  border-radius: 100px;
+  background-color: var(--color-purple-500);
+  color: white;
+  border: 0;
+  width: fit-content;
+  box-shadow: 8px 8px var(--color-green-100);
+  margin-top: 40px;
+  transition: box-shadow 0.3s ease;
+}
+
+a.button-type:hover {
+  box-shadow: 8px -8px var(--color-green-100);
+  transition: box-shadow 0.3s ease;
 }
