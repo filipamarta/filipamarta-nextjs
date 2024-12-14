@@ -176,7 +176,6 @@ export default function Page() {
 
             {aboutContent.map((content, i) => {
               const { title, paragraphs } = content;
-              console.log(content);
               return (
                 <motion.article
                   variants={fadeInUp}
