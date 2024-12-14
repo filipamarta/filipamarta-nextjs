@@ -15,7 +15,9 @@ const SpecialText = ({ children }: { children: string }) => {
 
   return (
     <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
+      onMouseMove={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+        mouseX.set(e.pageX)
+      }
       onMouseLeave={() => mouseX.set(0)}
     >
       {letters.map((letter, index) => {
