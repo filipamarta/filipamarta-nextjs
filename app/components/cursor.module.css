@@ -1,0 +1,22 @@
+.cursor {
+    background-color: black;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1005;
+    pointer-events: none;
+    mix-blend-mode: difference;
+  }
+  
+  .cursor div {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    mix-blend-mode: difference;
+  }
+  
