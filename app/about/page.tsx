@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Cursor from "../components/Cursor";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Cursor from "../components/cursor/Cursor";
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";

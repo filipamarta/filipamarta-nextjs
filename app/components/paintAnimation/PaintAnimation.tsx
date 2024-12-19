@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./paintAnimation.module.css";
-import { scrollHandlerForSVGPaintAnimation } from "../lib/utils";
+import { scrollHandlerForSVGPaintAnimation } from "../../lib/utils";
 
 export default function PaintAnimation() {
   const svgRef = useRef<SVGSVGElement>(null);

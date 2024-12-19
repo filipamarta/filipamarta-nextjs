@@ -59,6 +59,18 @@ body {
   cursor: none;
 }
 
+main {
+  width: 100%;
+  background: white;
+  padding: 80px 24px;
+}
+
+@media only screen and (min-width: 900px) {
+  main {
+    padding: 80px;
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./header.module.css";
 import Link from "next/link";
-import AnimatedFont from "./AnimatedFont";
+import AnimatedFont from "../animatedFontWeight/AnimatedFont";
 
 export default function Header() {
   return (
@@ -11,9 +11,9 @@ export default function Header() {
           <AnimatedFont htmlAttribute="li" customStyles={styles.link}>
             <Link href="/">Home</Link>
           </AnimatedFont>
-          <AnimatedFont htmlAttribute="li" customStyles={styles.link}>
+          {/* <AnimatedFont htmlAttribute="li" customStyles={styles.link}>
             <Link href="/projects">Projects</Link>
-          </AnimatedFont>
+          </AnimatedFont> */}
           <AnimatedFont htmlAttribute="li" customStyles={styles.link}>
             <Link href="/about">About</Link>
           </AnimatedFont>
