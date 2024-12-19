@@ -2,10 +2,16 @@ import React from "react";
 import styles from "./footer.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { FooterProps } from "@/app/lib/definitions";
 
-export default function Footer() {
+export default function Footer({
+  backgroundColorVar = "--color-green-100",
+}: FooterProps) {
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={styles.footer}
+      style={{ backgroundColor: `var(${backgroundColorVar})` }}
+    >
       <div className={styles.footerInnerContainer}>
         <h3>
           Say hey

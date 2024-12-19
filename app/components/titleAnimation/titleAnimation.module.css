@@ -1,8 +1,9 @@
 .topMessage {
+  margin-top: 60px;
   color: var(--color-green-500);
   font-family: var(--font-family-headings);
   font-size: 14vw; /* resize with the width */
-  line-height: 1;
+  line-height: 1.2;
   font-variation-settings: "wght" 100, "wdth" 85;
   animation: topMessageAnimation 10s infinite forwards;
   animation-delay: 0s;
@@ -20,14 +21,23 @@
   }
 }
 
-.topMessage span a {
+.topMessage .topMessageHeading {
+  font-size: 14vw; /* resize with the width */
+  line-height: 1.2;
   z-index: 10;
   position: relative;
   mix-blend-mode: color-dodge;
   isolation: isolate;
+  margin: 8rem 0 2rem 0;
 }
 
-.topMessage span:hover {
-  color: rgb(0, 255, 255);
-  transition: color 0.3s ease-in-out;
+@media only screen and (min-width: 900px) {
+  .topMessage {
+    margin-top: 0px;
+    line-height: 1.1;
+  }
+
+  .topMessage .topMessageHeading {
+    margin: 6rem 0 0 0;
+  }
 }

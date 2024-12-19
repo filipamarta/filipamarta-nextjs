@@ -5,7 +5,6 @@
   align-items: center;
   justify-items: center;
   position: relative;
-  background-color: white;
   margin: 0 auto;
   cursor: none;
 }
@@ -21,7 +20,7 @@
 
 .titleAnimationContainer {
   width: 100%;
-  padding: 0 80px;
+  padding: 0 30px;
 }
 
 .parallaxTextContainer {
@@ -31,4 +30,30 @@
   z-index: 1;
   overflow: hidden;
   color: var(--color-green-500);
+}
+
+.about {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  margin: 60px auto;
+  padding: 0 24px;
+  z-index: var(--z-index-3);
+}
+
+.about p {
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+@media only screen and (min-width: 900px) {
+  .titleAnimationContainer {
+    width: 100%;
+    padding: 0 80px;
+  }
+  .about {
+    width: 65%;
+    padding: 0 80px;
+  }
 }
