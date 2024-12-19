@@ -11,7 +11,7 @@ export default function TitleAnimation() {
         <br />
         of the internet
         <br />
-        I'm a...
+        I&apos;m a...
         <br />
         <h1 className={styles.topMessageHeading}>
           Creative Frontend Developer &
