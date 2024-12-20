@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./cursor.module.css";
+import { useMediaQuery } from "react-responsive";
 
 const Cursor = () => {
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const cursorChildRef = useRef<HTMLDivElement | null>(null);
   const [cursorSize, setCursorSize] = useState(14);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const animateCursor = ({ x, y }: { x: number; y: number }) => {
     const cursorChildTag = cursorChildRef.current;
@@ -16,8 +18,8 @@ const Cursor = () => {
 
   /* to handle mouseover and mouseleave styles during links hover */
   const handleMouseHover = (event: MouseEvent) => {
+    if (isMobile) return;
     const target = event.target as HTMLElement;
-
     if (target.tagName === "A") {
       if (event.type === "mouseover") {
         setCursorSize(30);
@@ -28,23 +30,36 @@ const Cursor = () => {
   };
 
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      requestAnimationFrame(() =>
-        animateCursor({ x: event.clientX, y: event.clientY })
-      );
-    };
+    if (isMobile) {
+      // Hide custom cursor on mobile
+      if (cursorRef.current) {
+        cursorRef.current.style.display = "none";
+      }
+      return; // Skip attaching event listeners
+    } else {
+      // Show custom cursor on desktop
+      if (cursorRef.current) {
+        cursorRef.current.style.display = "block";
+      }
 
-    // Attach event listeners for mouse movement and hover
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseover", handleMouseHover, true);
-    document.addEventListener("mouseleave", handleMouseHover, true);
-    // Cleanup on component unmount
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseover", handleMouseHover, true);
-      document.removeEventListener("mouseleave", handleMouseHover, true);
-    };
-  }, []);
+      const handleMouseMove = (event: MouseEvent) => {
+        requestAnimationFrame(() =>
+          animateCursor({ x: event.clientX, y: event.clientY })
+        );
+      };
+
+      // Attach event listeners for mouse movement and hover
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseover", handleMouseHover, true);
+      document.addEventListener("mouseleave", handleMouseHover, true);
+      // Cleanup on component unmount
+      return () => {
+        document.removeEventListener("mousemove", handleMouseMove);
+        document.removeEventListener("mouseover", handleMouseHover, true);
+        document.removeEventListener("mouseleave", handleMouseHover, true);
+      };
+    }
+  }, [isMobile]);
 
   return (
     <div

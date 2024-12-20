@@ -5,7 +5,7 @@ import PaintAnimation from "./components/paintAnimation/PaintAnimation";
 import Footer from "./components/footer/Footer";
 import TitleAnimation from "./components/titleAnimation/TitleAnimation";
 import ParallaxText from "./components/parallaxText/ParallaxText";
-import GridProjects from "./components/GridProjects";
+import GridProjects from "./components/gridProjects/GridProjects";
 import Cursor from "./components/cursor/Cursor";
 
 export default function Page() {

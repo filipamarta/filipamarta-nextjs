@@ -12,7 +12,7 @@
   color: white;
 }
 
-.projectsList {
+ul.projectsList {
   row-gap: 2.5rem;
   column-gap: 1rem;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -22,7 +22,11 @@
   margin-right: auto;
 }
 
-.projectsList .project figcaption {
+ul.projectsList li.project {
+  height: fit-content;
+}
+
+ul.projectsList li.project figcaption {
   width: 100%;
   color: white;
   padding: 3px 10px;
@@ -30,32 +34,32 @@
   overflow-x: hidden;
 }
 
-.projectsList .project:not(.video) {
+ul.projectsList li.project:not(.video) {
   grid-column: span 6 / span 6;
 }
 
-.projectsList .project.video {
+ul.projectsList li.project.video {
   grid-column: span 12 / span 12;
   grid-row: span 2 / span 2;
 }
 
-.projectsList h3 {
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+ul.projectsList h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
 
 @media only screen and (min-width: 900px) {
   .container {
     padding: 0 24px;
   }
-  .projectsList {
-    row-gap: 1rem;
-    column-gap: 1rem;
+  ul.projectsList {
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
-  .projectsList .project:not(.video) {
+  ul.projectsList li.project:not(.video) {
     grid-column: span 4 / span 4;
   }
 
-  .projectsList .project.video {
+  ul.projectsList li.project.video {
     grid-column: span 8 / span 8;
     grid-row: span 2 / span 2;
   }
@@ -65,10 +69,10 @@
   .container {
     padding: 0 80px;
   }
-  .projectsList .project:not(.video) {
+  ul.projectsList li.project:not(.video) {
     grid-column: span 3 / span 3;
   }
-  .projectsList .project.video {
+  ul.projectsList li.project.video {
     grid-column: span 6 / span 6;
     grid-row: span 2 / span 2;
   }
