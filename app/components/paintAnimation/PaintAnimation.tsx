@@ -50,7 +50,7 @@ export default function PaintAnimation({ mainMaxHeight }: PaintAnimationProps) {
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, [mainMaxHeight]);
+  }, [mainMaxHeight, isMobile]);
 
   return (
     <svg
