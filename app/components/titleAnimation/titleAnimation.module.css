@@ -1,8 +1,8 @@
 .topMessage {
-  margin-top: 60px;
+  margin-top: 20px;
   color: var(--color-green-500);
   font-family: var(--font-family-headings);
-  font-size: 14vw; /* resize with the width */
+  font-size: 16vw; /* resize with the width */
   line-height: 1.2;
   font-variation-settings: "wght" 100, "wdth" 85;
   animation: topMessageAnimation 10s infinite forwards;
@@ -13,7 +13,7 @@
 
 @keyframes topMessageAnimation {
   60% {
-    font-variation-settings: "wght" 700, "wdth" 100;
+    font-variation-settings: "wght" 500, "wdth" 90; /* Less extreme weight change for mobile */
   }
 
   100% {
@@ -22,7 +22,7 @@
 }
 
 .topMessage .topMessageHeading {
-  font-size: 14vw; /* resize with the width */
+  font-size: 16vw; /* resize with the width */
   line-height: 1.2;
   z-index: 10;
   position: relative;
@@ -35,9 +35,23 @@
   .topMessage {
     margin-top: 0px;
     line-height: 1.1;
+    font-size: 14vw;
+    font-variation-settings: "wght" 100, "wdth" 85;
   }
 
   .topMessage .topMessageHeading {
     margin: 6rem 0 0 0;
+    font-size: 14vw;
+    margin: 6rem 0 0 0;
+  }
+
+  @keyframes topMessageAnimation {
+    60% {
+      font-variation-settings: "wght" 700, "wdth" 100; /* Increase the weight change */
+    }
+
+    100% {
+      font-variation-settings: "wght" 100, "wdth" 85;
+    }
   }
 }
