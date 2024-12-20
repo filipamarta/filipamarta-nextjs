@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./cursor.module.css";
 import { useMediaQuery } from "react-responsive";
 
@@ -17,31 +17,25 @@ const Cursor = () => {
   };
 
   /* to handle mouseover and mouseleave styles during links hover */
-  const handleMouseHover = (event: MouseEvent) => {
-    if (isMobile) return;
-    const target = event.target as HTMLElement;
-    if (target.tagName === "A") {
-      if (event.type === "mouseover") {
-        setCursorSize(30);
-      } else if (event.type === "mouseleave") {
-        setCursorSize(14);
+  const handleMouseHover = useCallback(
+    (event: MouseEvent) => {
+      if (isMobile) return;
+
+      const target = event.target as HTMLElement;
+
+      if (target.tagName === "A") {
+        if (event.type === "mouseover") {
+          setCursorSize(30);
+        } else if (event.type === "mouseleave") {
+          setCursorSize(14);
+        }
       }
-    }
-  };
+    },
+    [isMobile]
+  );
 
   useEffect(() => {
-    if (isMobile) {
-      // Hide custom cursor on mobile
-      if (cursorRef.current) {
-        cursorRef.current.style.display = "none";
-      }
-      return; // Skip attaching event listeners
-    } else {
-      // Show custom cursor on desktop
-      if (cursorRef.current) {
-        cursorRef.current.style.display = "block";
-      }
-
+    if (!isMobile) {
       const handleMouseMove = (event: MouseEvent) => {
         requestAnimationFrame(() =>
           animateCursor({ x: event.clientX, y: event.clientY })
@@ -59,7 +53,7 @@ const Cursor = () => {
         document.removeEventListener("mouseleave", handleMouseHover, true);
       };
     }
-  }, [isMobile]);
+  }, [isMobile, handleMouseHover]);
 
   return (
     <div

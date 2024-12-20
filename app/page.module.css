@@ -6,7 +6,7 @@
   justify-items: center;
   position: relative;
   margin: 0 auto;
-  cursor: none;
+  cursor: auto;
 }
 
 .main {
@@ -45,6 +45,12 @@
 .about p {
   margin-bottom: 1.5rem;
   color: white;
+}
+
+@media only screen and (min-width: 767px) {
+  .page {
+    cursor: none;
+  }
 }
 
 @media only screen and (min-width: 900px) {
