@@ -3,7 +3,6 @@
   top: 0;
   left: 0;
   width: 100vw;
-  /* height: 210vw; */
   z-index: var(--z-index-base);
 }
 .paintAnimation path {

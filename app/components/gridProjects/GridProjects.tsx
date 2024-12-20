@@ -3,6 +3,7 @@ import styles from "./gridProjects.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { GridProjectsProps } from "@/app/lib/definitions";
 
 const projects = [
   {
@@ -51,7 +52,9 @@ const projects = [
   },
 ];
 
-export default function GridProjects() {
+export default function GridProjects({
+  handleAnimationComplete,
+}: GridProjectsProps) {
   return (
     <section className={styles.container}>
       <motion.h2
@@ -70,6 +73,7 @@ export default function GridProjects() {
 
       <div>
         <motion.ul
+          onAnimationComplete={handleAnimationComplete}
           className={styles.projectsList}
           transition={{
             staggerChildren: 0.1,

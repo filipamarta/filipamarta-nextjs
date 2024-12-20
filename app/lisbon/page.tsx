@@ -34,7 +34,6 @@ export default function Page() {
     [0, 1],
     ["calc(0vw + (0px))", "calc(100vw + -230px)"]
   );
-  console.log(isDesktopOrLaptop);
 
   return (
     <>

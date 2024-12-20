@@ -11,17 +11,20 @@ const generateColor = (percentage: number): string => {
 export const scrollHandlerForSVGPaintAnimation = ({
   svg,
   path,
-  mainHeight,
+  maxHeight,
   totalDistance,
+  isMobile,
 }: scrollHandlerForSVGPaintAnimationType) => {
   const distance = window.scrollY;
   const percentage = Math.min(distance / totalDistance, 1); // Clamp to [0, 1]
   const pathLength = path.getTotalLength();
 
   // Update SVG styles
-  svg.style.height = `${mainHeight}px`;
+  svg.style.height = `${maxHeight}px`;
   path.style.strokeDasharray = `${pathLength}`; // I can change here to a value e.g. 600 and have the path dashed
   path.style.strokeDashoffset = `${pathLength * (1 - percentage)}`; // I can also use e.g. 600 and this line will end 600 of the end
-  path.style.strokeWidth = `${Math.max(distance * 0.9, 1)}`; // Prevent zero-width stroke with Max
+  path.style.strokeWidth = isMobile
+    ? `${Math.max(distance * 1.5, 1)}`
+    : `${Math.max(distance * 0.9, 1)}`; // Prevent zero-width stroke with Max
   path.style.stroke = generateColor(percentage);
 };

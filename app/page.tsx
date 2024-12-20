@@ -7,13 +7,42 @@ import TitleAnimation from "./components/titleAnimation/TitleAnimation";
 import ParallaxText from "./components/parallaxText/ParallaxText";
 import GridProjects from "./components/gridProjects/GridProjects";
 import Cursor from "./components/cursor/Cursor";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function Page() {
+  const mainRef = useRef<HTMLElement | null>(null);
+  const [mainMaxHeight, setMainMaxHeight] = useState(0);
+
+  const updateHeight = useCallback(() => {
+    const height = mainRef.current?.offsetHeight || 0;
+    setMainMaxHeight(height);
+  }, []);
+
+  useEffect(() => {
+    if (mainRef.current) {
+      updateHeight();
+
+      // Observe size changes
+      const observer = new ResizeObserver(() => {
+        updateHeight();
+      });
+      observer.observe(mainRef.current);
+
+      return () => {
+        observer.disconnect();
+      };
+    }
+  }, [updateHeight]);
+
+  const handleAnimationComplete = () => {
+    updateHeight();
+  };
+
   return (
     <>
       <div className={styles.page}>
         <Header />
-        <main className={styles.main}>
+        <main className={styles.main} ref={mainRef}>
           <div className={styles.titleAnimationContainer}>
             <TitleAnimation />
           </div>
@@ -38,12 +67,12 @@ export default function Page() {
               everyone.
             </p>
           </section>
-          <GridProjects />
+          <GridProjects handleAnimationComplete={handleAnimationComplete} />
         </main>
         <Footer backgroundColorVar="--color-neutral-100" />
       </div>
 
-      <PaintAnimation />
+      <PaintAnimation mainMaxHeight={mainMaxHeight} />
       <Cursor />
     </>
   );

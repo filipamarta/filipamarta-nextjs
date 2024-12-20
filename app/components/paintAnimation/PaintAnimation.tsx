@@ -1,28 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./paintAnimation.module.css";
 import { scrollHandlerForSVGPaintAnimation } from "../../lib/utils";
+import { PaintAnimationProps } from "@/app/lib/definitions";
+import { useMediaQuery } from "react-responsive";
 
-export default function PaintAnimation() {
+export default function PaintAnimation({ mainMaxHeight }: PaintAnimationProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const [isSVGVisible, setSVGIsVisible] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   useEffect(() => {
+    if (mainMaxHeight <= 0) {
+      return;
+    }
+
     const svg = svgRef.current;
     const path = pathRef.current;
     if (!svg || !path) return;
 
-    // Cache values to reduce DOM queries
-    // Calculate the maximum height of the document because I need to add this value to the height of the svg in order to paint all the page
-    const mainHeight = document.getElementsByTagName("main")[0].offsetHeight;
+    const maxHeight = mainMaxHeight;
     const totalDistance = svg.clientHeight - window.innerHeight;
 
     const handleScroll = () =>
       scrollHandlerForSVGPaintAnimation({
         svg,
         path,
-        mainHeight,
+        maxHeight,
         totalDistance,
+        isMobile,
       });
 
     // Add scroll listener with `requestAnimationFrame`
@@ -44,7 +50,7 @@ export default function PaintAnimation() {
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [mainMaxHeight]);
 
   return (
     <svg
