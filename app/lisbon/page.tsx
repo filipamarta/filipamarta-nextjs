@@ -76,7 +76,7 @@ export default function Page() {
                     opacity: 1,
                     transition: { duration: 1, delay: 0.3 * i },
                   }}
-                  viewport={{ amount: "10%" }}
+                  viewport={{ amount: 0.1 }}
                   key={i}
                 >
                   {parse(paragraph)}
@@ -92,7 +92,7 @@ export default function Page() {
                 opacity: 1,
                 transition: { duration: 1, delay: 0.5 },
               }}
-              viewport={{ amount: "10%" }}
+              viewport={{ amount: 0.1 }}
             >
               <Link
                 href="https://maps.app.goo.gl/JDpATAny3te2cbnQ6"

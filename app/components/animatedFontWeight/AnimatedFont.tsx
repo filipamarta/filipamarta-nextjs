@@ -1,16 +1,18 @@
-import React from "react";
+import React, { JSX } from "react";
 import styles from "./animatedFont.module.css";
+
+type AnimatedFontProps = {
+  htmlAttribute: keyof JSX.IntrinsicElements;
+  children: React.ReactNode;
+  customStyles: string;
+};
 
 export default function AnimatedFont({
   htmlAttribute,
   children,
   customStyles,
-}: {
-  htmlAttribute: keyof JSX.IntrinsicElements;
-  children: React.ReactNode;
-  customStyles: string;
-}) {
-  const HtmlTag = htmlAttribute as keyof JSX.IntrinsicElements;
+}: AnimatedFontProps) {
+  const HtmlTag = htmlAttribute;
 
   return (
     <HtmlTag className={`${styles.font} ${customStyles}`}>{children}</HtmlTag>
